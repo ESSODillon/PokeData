@@ -1,13 +1,16 @@
 <?php
+
 /**
  * Author: Kameron Someson
  * Date: 4/9/2021
  * File: pokemon_detail.class.php
  * Description:
  */
-class PokemonDetail extends PokemonIndexView {
+class PokemonDetail extends PokemonIndexView
+{
 
-    public function display($pokemon, $confirm = "") {
+    public function display($pokemon, $confirm = "")
+    {
         //display page header
         parent::displayHeader("Pokemon Details");
 
@@ -31,10 +34,10 @@ class PokemonDetail extends PokemonIndexView {
 
 
 
-        if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
-            $image = BASE_URL . '/' . POKEMON_IMG . $image;
-        }
-        ?>
+        //if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
+        //$image = BASE_URL . '/' . POKEMON_IMG . $image;
+        //}
+?>
 
         <div id="main-header">Pokemon Details</div>
         <hr>
@@ -81,10 +84,10 @@ class PokemonDetail extends PokemonIndexView {
         </table>
         <a href="<?= BASE_URL ?>/pokemon/index">Go to Pokemon list</a>
 
-        <?php
+<?php
         //display page footer
         parent::displayFooter();
     }
 
-//end of display method
+    //end of display method
 }

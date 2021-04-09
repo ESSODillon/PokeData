@@ -15,8 +15,10 @@ return array(
     'IndexView' => $baseDir . '/views/index_view.class.php',
     'Pokemon' => $baseDir . '/models/pokemon.class.php',
     'PokemonController' => $baseDir . '/controllers/pokemon_controller.class.php',
+    'PokemonDetail' => $baseDir . '/views/pokemon/detail/pokemon_detail.class.php',
     'PokemonError' => $baseDir . '/views/pokemon/error/pokemon_error.class.php',
     'PokemonIndex' => $baseDir . '/views/pokemon/index/pokemon_index.class.php',
     'PokemonIndexView' => $baseDir . '/views/pokemon/pokemon_index_view.class.php',
     'PokemonModel' => $baseDir . '/models/pokemon_model.class.php',
+    'PokemonSearch' => $baseDir . '/views/pokemon/search/pokemon_search.class.php',
 );

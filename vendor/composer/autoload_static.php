@@ -16,10 +16,12 @@ class ComposerStaticInit4e0f0341f636ce9e0f8b5a018f890e0c
         'IndexView' => __DIR__ . '/../..' . '/views/index_view.class.php',
         'Pokemon' => __DIR__ . '/../..' . '/models/pokemon.class.php',
         'PokemonController' => __DIR__ . '/../..' . '/controllers/pokemon_controller.class.php',
+        'PokemonDetail' => __DIR__ . '/../..' . '/views/pokemon/detail/pokemon_detail.class.php',
         'PokemonError' => __DIR__ . '/../..' . '/views/pokemon/error/pokemon_error.class.php',
         'PokemonIndex' => __DIR__ . '/../..' . '/views/pokemon/index/pokemon_index.class.php',
         'PokemonIndexView' => __DIR__ . '/../..' . '/views/pokemon/pokemon_index_view.class.php',
         'PokemonModel' => __DIR__ . '/../..' . '/models/pokemon_model.class.php',
+        'PokemonSearch' => __DIR__ . '/../..' . '/views/pokemon/search/pokemon_search.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
