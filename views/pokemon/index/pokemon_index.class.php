@@ -20,33 +20,6 @@ class PokemonIndex extends PokemonIndexView
 
         <div id="main-header">PokeData All Pokemon</div>
 
-        <div class="grid-container">
-            <?php
-            if ($pokemons === 0) {
-                echo "No book was found.<br><br><br><br><br>";
-            } else {
-                //display books in a grid; six movies per row
-                foreach ($pokemons as $i => $pokemon) {
-                    $id = $pokemon->getId();
-                    $title = $pokemon->getTitle();
-                    $category = $pokemon->getCategory();
-                    $image = $pokemon->getImage();
-                    if ($i % 6 == 0) {
-                        echo "<div class='row'>";
-                    }
-
-                    echo "<div class='col'><p><a href='", BASE_URL, "/book/detail/$id'><img src='" . $image .
-                        "'></a><span>$title<br>$category<br>" . "</span></p></div>";
-            ?>
-            <?php
-                    if ($i % 6 == 5 || $i == count($pokemons) - 1) {
-                        echo "</div>";
-                    }
-                }
-            }
-            ?>
-        </div>
-
 
 <?php
         //display page footer
