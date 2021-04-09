@@ -14,10 +14,10 @@ class Database
     //define database parameters
     private $param = array(
         'host' => 'localhost',
-        'login' => 'phpuser',
-        'password' => 'phpuser',
-        'database' => 'PokeData',
-        'tblPokemon' => 'Pokemon',
+        'login' => 'root',
+        'password' => '',
+        'database' => 'pokedata',
+        'tblPokemon' => 'pokedata_db',
     );
     //define the database connection object
     private $objDBConnection = NULL;

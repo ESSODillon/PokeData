@@ -17,7 +17,13 @@ class PokemonIndexView extends IndexView
             //the media type
             var media = "pokemon";
         </script>
-
+        <div id="searchbar">
+            <form method="get" action="<?= BASE_URL ?>/movie/search">
+                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search pokemon by name" autocomplete="off" onkeyup="handleKeyUp(event)">
+                <input type="submit" value="Go" />
+            </form>
+            <div id="suggestionDiv"></div>
+        </div>
 <?php
     }
 

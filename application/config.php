@@ -15,4 +15,4 @@ error_reporting(E_ALL);
 date_default_timezone_set('America/New_York');
 
 //base url of the application
-define("BASE_URL", "http://localhost:8080/I211_PHP/PokeData");
+define("BASE_URL", "http://localhost/I211/PokeData");
