@@ -61,7 +61,6 @@ class PokemonModel
         while ($obj = $query->fetch_object()) {
 
             $Pokemon = new Pokemon(stripslashes($obj->name), stripslashes($obj->hp), stripslashes($obj->attack), stripslashes($obj->defense), stripslashes($obj->type_1), stripslashes($obj->type_2), stripslashes($obj->ability_1), stripslashes($obj->ability_2), stripslashes($obj->hidden_ability), stripslashes($obj->mass), stripslashes($obj->color), stripslashes($obj->gender), stripslashes($obj->evolve), stripslashes($obj->description), stripslashes($obj->image));
-
             //set the id for the Book
             $Pokemon->setId($obj->id);
 
