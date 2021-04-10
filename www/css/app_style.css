@@ -441,3 +441,21 @@ textarea:required:invalid {
   font-family: Gameboy;
   margin-top: 10px;
 }
+
+#detail-title {
+  font-family: Gameboy;
+  font-size: 12px;
+  width: 100%;
+}
+
+#detail-subtitle {
+  font-family: Gameboy;
+  font-size: 12px;
+}
+
+#detail-back {
+  text-decoration: none;
+  font-family: Gameboy;
+  color: #084152;
+  border-bottom: 2px #084152 solid;
+}

@@ -31,15 +31,9 @@ class PokemonDetail extends PokemonIndexView
         $evolve = $pokemon->getEvolve();
         $description = $pokemon->getDescription();
         $image = $pokemon->getImage();
-
-
-
-        //if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
-        //$image = BASE_URL . '/' . POKEMON_IMG . $image;
-        //}
 ?>
 
-        <div id="main-header">Pokemon Details</div>
+        <div id="list-header">Pokemon Details</div>
         <hr>
         <!-- display movie details in a table -->
         <table id="detail">
@@ -48,41 +42,56 @@ class PokemonDetail extends PokemonIndexView
                     <img src="<?= $image ?>" alt="<?= $name ?>" />
                 </td>
                 <td style="width: 130px;">
-                    <p><strong>Name:</strong></p>
-                    <p><strong>HP:</strong></p>
-                    <p><strong>Attack:</strong></p>
-                    <p><strong>Defense:</strong></p>
-                    <p><strong>Type 1:</strong></p>
-                    <p><strong>Type 2:</strong></p>
-                    <p><strong>Ability 1:</strong></p>
-                    <p><strong>Ability 2:</strong></p>
-                    <p><strong>Hidden Ability:</strong></p>
-                    <p><strong>Mass:</strong></p>
-                    <p><strong>Color:</strong></p>
-                    <p><strong>Gender:</strong></p>
-                    <p><strong>Evolve:</strong></p>
-                    <p><strong>Description:</strong></p>
+                    <p id="detail-title">Name:</p>
+                    <br>
+                    <p id="detail-title">HP:</p>
+                    <p id="detail-title">Attack:</p>
+                    <p id="detail-title">Defense:</p>
+                    <br>
+                    <p id="detail-title">Type 1:</p>
+                    <p id="detail-title">Type 2:</p>
+                    <br>
+                    <p id="detail-title">Ability 1:</p>
+                    <p id="detail-title">Ability 2:</p>
+                    <br>
+                    <p id="detail-title">Hidden Ability:</p>
+                    <br>
+                    <p id="detail-title">Mass:</p>
+                    <p id="detail-title">Color:</p>
+                    <p id="detail-title">Gender:</p>
+                    <br>
+                    <p id="detail-title">Evolve:</p>
+                    <br>
+                    <p id="detail-title">Description:</p>
                 </td>
                 <td>
-                    <p><?= $name ?></p>
-                    <p><?= $hp ?></p>
-                    <p><?= $attack ?></p>
-                    <p><?= $defense ?></p>
-                    <p><?= $type_1 ?></p>
-                    <p><?= $type_2 ?></p>
-                    <p><?= $ability_1 ?></p>
-                    <p><?= $ability_2 ?></p>
-                    <p><?= $hidden_ability ?></p>
-                    <p><?= $mass ?></p>
-                    <p><?= $color ?></p>
-                    <p><?= $gender ?></p>
-                    <p><?= $evolve ?></p>
-                    <p class="media-description"><?= $description ?></p>
+                    <p id="detail-subtitle"><?= $name ?></p>
+                    <br>
+                    <p id="detail-subtitle"><?= $hp ?></p>
+                    <p id="detail-subtitle"><?= $attack ?></p>
+                    <p id="detail-subtitle"><?= $defense ?></p>
+                    <br>
+                    <p id="detail-subtitle"><?= $type_1 ?></p>
+                    <p id="detail-subtitle"><?= $type_2 ?></p>
+                    <br>
+                    <p id="detail-subtitle"><?= $ability_1 ?></p>
+                    <p id="detail-subtitle"><?= $ability_2 ?></p>
+                    <br>
+                    <p id="detail-subtitle"><?= $hidden_ability ?></p>
+                    <br>
+                    <p id="detail-subtitle"><?= $mass ?></p>
+                    <p id="detail-subtitle"><?= $color ?></p>
+                    <p id="detail-subtitle"><?= $gender ?></p>
+                    <br>
+                    <p id="detail-subtitle"><?= $evolve ?></p>
+                    <br>
+                    <p id="detail-subtitle" class="media-description"><?= $description ?></p>
                     <div id="confirm-message"><?= $confirm ?></div>
                 </td>
             </tr>
         </table>
-        <a href="<?= BASE_URL ?>/pokemon/index">Go to Pokemon list</a>
+        <br><br>
+        <a id="detail-back" href="<?= BASE_URL ?>/pokemon/index">Go back to Pokemon List</a>
 
 <?php
         //display page footer
