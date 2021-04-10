@@ -60,9 +60,9 @@ class PokemonModel
         //loop through all rows in the returned record sets
         while ($obj = $query->fetch_object()) {
 
-            $Pokemon = new Pokemon(stripslashes($obj->name), stripslashes($obj->hp), stripslashes($obj->attack), stripslashes($obj->defense), stripslashes($obj->type_1), stripslashes($obj->type_2), stripslashes($obj->ability_1), stripslashes($obj->ability_2), stripslashes($obj->hidden_ability), stripslashes($obj->mass), stripslashes($obj->color), stripslashes($obj->gender), stripslashes($obj->evolve), stripslashes($obj->description), stripslashes($obj->image));
+            $Pokemon = new Pokemon(stripslashes($obj->Name), stripslashes($obj->HP), stripslashes($obj->Attack), stripslashes($obj->Defense), stripslashes($obj->Type_I), stripslashes($obj->Type_II), stripslashes($obj->Ability_I), stripslashes($obj->Ability_II), stripslashes($obj->Hidden_Ability), stripslashes($obj->Mass), stripslashes($obj->Color), stripslashes($obj->Gender), stripslashes($obj->Evolve), stripslashes($obj->Description), stripslashes($obj->Image));
             //set the id for the Book
-            $Pokemon->setId($obj->id);
+            $Pokemon->setId($obj->ID);
 
             //add the Book into the array
             $Collection[] = $Pokemon;
@@ -74,7 +74,7 @@ class PokemonModel
     public function view_pokemon($id)
     {
         //the select sql statement
-        $sql = "SELECT * FROM " . $this->tblPokemon . " AND " . $this->tblBook . ".id='$id'";
+        $sql = "SELECT * FROM " . $this->tblPokemon . " AND " . $this->tblPokemon . ".ID='$id'";
 
         //execute the query
         $query = $this->dbConnection->query($sql);
@@ -84,10 +84,10 @@ class PokemonModel
             $obj = $query->fetch_object();
 
             //create a Book object
-            $Pokemon = new Pokemon(stripslashes($obj->name), stripslashes($obj->hp), stripslashes($obj->attack), stripslashes($obj->defense), stripslashes($obj->type_1), stripslashes($obj->type_2), stripslashes($obj->ability_1), stripslashes($obj->ability_2), stripslashes($obj->hidden_ability), stripslashes($obj->mass), stripslashes($obj->color), stripslashes($obj->gender), stripslashes($obj->evolve), stripslashes($obj->description), stripslashes($obj->image));
+            $Pokemon = new Pokemon(stripslashes($obj->Name), stripslashes($obj->HP), stripslashes($obj->Attack), stripslashes($obj->Defense), stripslashes($obj->Type_I), stripslashes($obj->Type_II), stripslashes($obj->Ability_I), stripslashes($obj->Ability_II), stripslashes($obj->Hidden_Ability), stripslashes($obj->Mass), stripslashes($obj->Color), stripslashes($obj->Gender), stripslashes($obj->Evolve), stripslashes($obj->Description), stripslashes($obj->Image));
 
             //set the id for the Book
-            $Pokemon->setId($obj->id);
+            $Pokemon->setId($obj->ID);
 
             return $Pokemon;
         }

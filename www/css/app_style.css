@@ -5,16 +5,17 @@
 */
 * {
   margin: 0;
+  /* border: red 2px solid; */
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
-body{
+body {
   text-align: center;
-  background-color: #e6e6f1;
-  background-color: white;
+  background-color: #fcc499;
 }
 
 /*reset padding for p and hx tags*/
@@ -22,8 +23,23 @@ p {
   padding: 0 0 1em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   padding: 0 0 0.4em;
+}
+
+@font-face {
+  font-family: PokeTitle;
+  src: url(fonts/pocket-monk-font/PocketMonk-15ze.ttf);
+}
+
+@font-face {
+  font-family: Gameboy;
+  src: url(fonts/pokemon-gb-font/PokemonGb-RAeo.ttf);
 }
 
 hr {
@@ -42,7 +58,7 @@ hr {
   z-index: -10;
   margin: 0;
   padding: 0;
-  background-color: #9FBA8F;
+  background-color: #faaa6d;
   width: 100%;
   height: 160px;
 }
@@ -52,51 +68,55 @@ hr {
   height: auto !important;
   height: 100%;
   margin: 0 auto -4em;
-  text-align:left;
-  width:960px;
+  text-align: left;
+  width: 960px;
 }
 
-
 /*styles for the page footer */
-#footer{
+#footer {
   font-size: 80%;
-  font-family: 'Times New Roman',Times,serif;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
   background-color: #eeeeee;
 }
 
-#footer, #push{
+#footer,
+#push {
   height: 4.8em;
   clear: both;
 }
 
 /*sytle for the banner */
 #banner {
-  background-color: #9FBA8F;
+  background-color: #faaa6d;
   height: 160px;
+  position: relative;
 }
 
-#banner #left{
+#banner #left {
   float: left;
   overflow: hidden;
   width: 530px;
   text-align: left;
-  margin-top: 30px;
+  position: absolute;
+  left: 30px;
+  top: 20px;
 }
 
-#banner #right{
+#banner #right {
   float: left;
   overflow: hidden;
   text-align: center;
 }
 
 /*styles for the page header that appears right below the banner*/
-#main-header {
-  margin-top: 10px;
+#list-header {
+  margin-top: 15px;
   margin-bottom: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #ff6600;
+  margin-left: 30px;
+  font-size: 15px;
+  font-family: Gameboy;
+  color: #207394;
   display: inline-block;
 }
 /*styles for the record numbers that appear to the right of the page header*/
@@ -109,35 +129,35 @@ span.rcd-numbers {
 }
 
 /* styles for grid */
-.grid-container{
+.grid-container {
   margin: 10px auto 10px auto;
   width: 960px;
   border: 1px solid #eee;
-  background-color: #ffebeb;
+  background-color: #419eae;
 }
 
 .row:before,
 .row:after {
-  content:"";
-  display: table ;
-  clear:both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .col {
   float: left;
   min-height: 1px;
   padding: 16px;
-  background-color: #ffebeb;
-  border: 1px dotted #ffebeb;
+  background-color: #419eae;
+  border: 1px dotted #419eae;
   text-align: center;
 }
 
 .col:hover {
-  border: 1px solid #ff6600;
+  background-color: #faaa6d;
 }
 
 .col > p {
-  background-color: #fff;
+  background-color: #ffeeb0;
   padding: 0;
   margin: 0;
   text-align: left;
@@ -150,19 +170,20 @@ span.rcd-numbers {
   width: 126px;
   height: 178px;
   border: none;
+  background-color: #ffeeb0;
 }
 
 .col > p a {
   text-decoration: none;
 }
 
-.col >p span {
+.col > p span {
   margin-top: 2px;
   display: inline-block;
   padding-left: 3px;
-  font-size: 0.7em;
-  font-family: cursive;
-  color: #555;
+  font-size: 8px;
+  font-family: Gameboy;
+  color: black;
 }
 
 table#detail {
@@ -207,14 +228,13 @@ table#detail {
 #searchbar {
   float: right;
   margin-top: 10px;
-  margin-right: 0px;
+  margin-right: 30px;
   position: relative;
   border: #bbb 1px solid;
   border-radius: 0px;
-
 }
 
-#searchbar input{
+#searchbar input {
   border: none;
 }
 
@@ -229,7 +249,7 @@ table#detail {
   outline: none;
 }
 
-#searchbar input[type="submit"]{
+#searchbar input[type="submit"] {
   border-left: 1px solid #fff;
   padding: 0;
   width: 24px;
@@ -238,7 +258,7 @@ table#detail {
   background-color: #eee;
 }
 
-#searchbar input[type="submit"]:hover{
+#searchbar input[type="submit"]:hover {
   border-left: 1px solid #999;
   background-color: #c7f2fd;
 }
@@ -254,8 +274,8 @@ table#detail {
   z-index: 9999;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
-  border: 1px solid rgba(0,0,0,.15);
-  box-shadow: 2px 10px 12px 2px rgba(0,0,0,.175);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 10px 12px 2px rgba(0, 0, 0, 0.175);
 }
 
 #suggestionDiv span {
@@ -267,7 +287,7 @@ table#detail {
 }
 
 #suggestionDiv span:hover {
-  background-color: #F5DEB3;
+  background-color: #f5deb3;
 }
 
 /* styles for sorting select list */
@@ -304,7 +324,6 @@ table#detail {
   border: 0px;
   padding: 0px;
   margin-left: 5px;
-
 }
 
 .pagination li a {
@@ -335,19 +354,22 @@ table#detail {
 
 .pagination li a:hover,
 .pagination li a:active,
-.pagination li a:focus
-{
+.pagination li a:focus {
   text-decoration: none;
   color: #ff6600;
   border: 1px solid #ff6600;
 }
 
 /*styles for new media form*/
-.new-media form{
-  /*width: 800px; border: 1px solid #bbb; margin-top: 10px; padding: 10px;*/
+.new-media form {
+  width: 800px;
+  border: 1px solid #bbb;
+  margin-top: 10px;
+  padding: 10px;
 }
 
-.new-media input[type="text"], .new-media textarea{
+.new-media input[type="text"],
+.new-media textarea {
   border: 1px solid #bbb;
   color: #333;
   border-radius: 2px;
@@ -356,19 +378,21 @@ table#detail {
   margin-top: 8px;
 }
 
-.new-media input:required:invalid, .new-media input:focus:invalid, textarea:required:invalid {
+.new-media input:required:invalid,
+.new-media input:focus:invalid,
+textarea:required:invalid {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
   background-position: right top;
   background-repeat: no-repeat;
   -moz-box-shadow: none;
 }
 
-.new-media input:required:valid, .new-media textarea:required:valid {
+.new-media input:required:valid,
+.new-media textarea:required:valid {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
   background-position: right top;
   background-repeat: no-repeat;
 }
-
 
 /*styles for the thumbnails on the homepage */
 #thumbnails a {
@@ -380,7 +404,7 @@ table#detail {
 }
 
 #thumbnails img {
-  border: solid 3px #448C9A;
+  border: solid 3px #448c9a;
   border-radius: 10px;
   margin: 5px;
   padding: 1px;
@@ -391,6 +415,29 @@ table#detail {
 }
 
 #thumbnails img:hover {
-  border: solid 6px #393ECE;
-  margin: 2px
+  border: solid 6px #393ece;
+  margin: 2px;
+}
+
+#logo_banner {
+  width: 180px;
+  height: 150px;
+  position: absolute;
+  right: 30px;
+}
+
+#title {
+  font-size: 60px;
+  text-decoration: none;
+  color: #084152;
+  font-family: PokeTitle;
+  height: 50px;
+}
+
+#subtitle {
+  font-size: 12px;
+  text-decoration: none;
+  color: #084152;
+  font-family: Gameboy;
+  margin-top: 10px;
 }
