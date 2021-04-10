@@ -74,7 +74,7 @@ class PokemonModel
     public function view_pokemon($id)
     {
         //the select sql statement
-        $sql = "SELECT * FROM " . $this->tblPokemon . " AND " . $this->tblBook . ".id='$id'";
+        $sql = "SELECT * FROM " . $this->tblPokemon . " WHERE " . $this->tblPokemon . ".id='$id'";
 
         //execute the query
         $query = $this->dbConnection->query($sql);

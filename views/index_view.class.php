@@ -20,6 +20,10 @@ class IndexView
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $page_title ?></title>
              <link type='text/css' rel='stylesheet' href='<?= BASE_URL ?>/www/css/app_style.css' />
+             <script>
+                //create the JavaScript variable for the base url
+                var base_url = "<?= BASE_URL ?>";
+            </script>
         </head>
 
         <body>

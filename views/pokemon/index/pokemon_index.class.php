@@ -39,7 +39,7 @@ class PokemonIndex extends PokemonIndexView
                 }
 
                 echo "<div class='col'><p><a href='", BASE_URL, "/pokemon/detail/$id'><img src='" . $image .
-                    "'></a><span>$name<br>Type $type_1<br>" . $type_2 . "</span></p></div>";
+                    "'></a><span>$name<br>Type: $type_1<br>" . $type_2 . "</span></p></div>";
                 ?>
                 <?php
                 if ($i % 6 == 5 || $i == count($pokemons) - 1){

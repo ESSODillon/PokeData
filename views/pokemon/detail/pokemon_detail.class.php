@@ -34,9 +34,9 @@ class PokemonDetail extends PokemonIndexView
 
 
 
-        //if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
-        //$image = BASE_URL . '/' . POKEMON_IMG . $image;
-        //}
+        if (strpos($image, "http://") === false AND strpos($image, "https://") === false) {
+        $image = BASE_URL . '/' . $image;
+        }
 ?>
 
         <div id="main-header">Pokemon Details</div>
