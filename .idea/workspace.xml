@@ -28,7 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Unit10/calculators" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -42,7 +42,7 @@
       <updated>1617979222309</updated>
       <workItem from="1617979224008" duration="3124000" />
       <workItem from="1617984775299" duration="9542000" />
-      <workItem from="1618021497052" duration="8564000" />
+      <workItem from="1618021497052" duration="10270000" />
     </task>
     <servers />
   </component>
