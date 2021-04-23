@@ -94,4 +94,42 @@ class PokemonModel
 
         return false;
     }
+    //search the database for pokemon that match words in titles. Return an array of pokemon if succeed; false otherwise.
+    public function search_pokemon($terms) {
+        $terms = explode(" ", $terms); //explode multiple terms into an array
+        //select statement for AND serach
+        $sql = "SELECT * FROM " . $this->tblPokemon . " WHERE ";
+
+        foreach ($terms as $term) {
+            $sql .= " AND Name LIKE '%" . $term . "%'";
+        }
+
+        $sql .= ")";
+
+        //execute the query
+        $query = $this->dbConnection->query($sql);
+
+        // the search failed, return false.
+        if (!$query)
+            return false;
+
+
+        if ($query->num_rows == 0)
+            return 0;
+
+
+        $Collection = array();
+
+
+        while ($obj = $query->fetch_object()) {
+            $Pokemon = new Pokemon($obj->Name, $obj->Type_1, $obj->Type_2, $obj->Image, $obj->HP, $obj->Attack, $obj->Defense, $obj->Ability_1, $obj->Ability_2, $obj->Hidden_Ability, $obj->Mass, $obj->Color, $obj->Gender, $obj->Evolve, $obj->Description);
+
+            //set the id for the pokemon
+            $Pokemon->setId($obj->ID);
+
+            //add the pokemon into the array
+            $Collection[] = $Pokemon;
+        }
+        return $Collection;
+    }
 }

@@ -5,20 +5,22 @@
  * File: pokemon_search.class.php
  * Description:
  */
+
+
 class PokemonSearch extends PokemonIndexView {
     /*
      * the displays accepts an array of movie objects and displays
      * them in a grid.
      */
 
-    public function display($terms, $pokemons) {
+    public function display($terms, $Collection) {
         //display page header
         parent::displayHeader("Search Results");
         ?>
         <div id="main-header"> Search Results for <i><?= $terms ?></i></div>
         <span class="rcd-numbers">
             <?php
-            echo ((!is_array($pokemons)) ? "( 0 - 0 )" : "( 1 - " . count($pokemons) . " )");
+            echo ((!is_array($Collection)) ? "( 0 - 0 )" : "( 1 - " . count($Collection) . " )");
             ?>
         </span>
         <hr>
@@ -26,11 +28,11 @@ class PokemonSearch extends PokemonIndexView {
         <!-- display all records in a grid -->
         <div class="grid-container">
             <?php
-            if ($pokemons === 0) {
+            if ($Collection === 0) {
                 echo "No Pokemon was found.<br><br><br><br><br>";
             } else {
                 //display pokemon in a grid;
-                foreach ($pokemons as $i => $pokemon) {
+                foreach ($Collection as $i => $pokemon) {
                     $id = $pokemon->getId();
                     $name = $pokemon->getName();
                     $image = $pokemon->getImage();
@@ -47,7 +49,7 @@ class PokemonSearch extends PokemonIndexView {
                         "'></a><span>$name<br>Type $type_1<br>" . $type_2 . "</span></p></div>";
                     ?>
                     <?php
-                    if ($i % 6 == 5 || $i == count($pokemons) - 1){
+                    if ($i % 6 == 5 || $i == count($Collection) - 1){
                         echo "</div>";
                     }
                 }
@@ -58,6 +60,6 @@ class PokemonSearch extends PokemonIndexView {
         <?php
         //display page footer
         parent::displayFooter();
-    }
+    }}
 
 //end of display method

@@ -64,10 +64,10 @@ class PokemonController
             $this->index();
         }
 
-        //search the database for matching pokemon
-        $pokemons = $this->pokemon_model->search_pokemon($query_terms);
+        //search the database for matching pokemon`
+        $Collection = $this->pokemon_model->search_pokemon($query_terms);
 
-        if ($pokemons === false) {
+        if ($Collection === false) {
             //handle error
             $message = "An error has occurred.";
             $this->error($message);
@@ -75,7 +75,7 @@ class PokemonController
         }
         //display matched movies
         $search = new PokemonSearch();
-        $search->display($query_terms, $pokemons);
+        $search->display($query_terms, $Collection);
     }
 
     //autosuggestion
@@ -83,12 +83,12 @@ class PokemonController
     {
         //retrieve query terms
         $query_terms = urldecode(trim($terms));
-        $pokemons = $this->pokemon_model->search_pokemon($query_terms);
+        $Collection = $this->pokemon_model->search_pokemon($query_terms);
 
         //retrieve all pokemon names and store them in an array
         $names = array();
-        if ($pokemons) {
-            foreach ($pokemons as $pokemon) {
+        if ($Collection) {
+            foreach ($Collection as $pokemon) {
                 $names[] = $pokemon->getName();
             }
         }
