@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: Kameron Someson
  * Date: 4/9/2021
@@ -7,17 +8,20 @@
  */
 
 
-class PokemonSearch extends PokemonIndexView {
+class PokemonSearch extends PokemonIndexView
+{
     /*
      * the displays accepts an array of movie objects and displays
      * them in a grid.
      */
 
-    public function display($terms, $Collection) {
+    public function display($terms, $Collection)
+    {
         //display page header
         parent::displayHeader("Search Results");
-        ?>
-        <div id="main-header"> Search Results for <i><?= $terms ?></i></div>
+?>
+        <div id="list-header"> Search Results for "<i><?= $terms ?></i>"</div>
+        <br>
         <span class="rcd-numbers">
             <?php
             echo ((!is_array($Collection)) ? "( 0 - 0 )" : "( 1 - " . count($Collection) . " )");
@@ -38,28 +42,26 @@ class PokemonSearch extends PokemonIndexView {
                     $image = $pokemon->getImage();
                     $type_1 = $pokemon->getType1();
                     $type_2 = $pokemon->getType2();
-                    if (strpos($image, "http://")=== false AND strpos($image, "https://")=== false){
-                        $image = BASE_URL . "/" . POKEMON_IMG .$image;
-                    }
                     if ($i % 6 == 0) {
                         echo "<div class='row'>";
                     }
 
                     echo "<div class='col'><p><a href='", BASE_URL, "/pokemon/detail/$id'><img src='" . $image .
                         "'></a><span>$name<br><br>Type I: $type_1<br><br>Type II: " . $type_2 . "</span></p></div>";
-                    ?>
-                    <?php
-                    if ($i % 6 == 5 || $i == count($Collection) - 1){
+            ?>
+            <?php
+                    if ($i % 6 == 5 || $i == count($Collection) - 1) {
                         echo "</div>";
                     }
                 }
             }
             ?>
         </div>
-        <a href="<?= BASE_URL ?>/pokemon/index">Go to pokemon list</a>
-        <?php
+        <a id="detail-back" href="<?= BASE_URL ?>/pokemon/index">Go back to Pokemon List</a>
+<?php
         //display page footer
         parent::displayFooter();
-    }}
+    }
+}
 
 //end of display method

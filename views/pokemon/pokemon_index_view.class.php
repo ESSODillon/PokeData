@@ -27,6 +27,8 @@ class PokemonIndexView extends IndexView
 <?php
     }
 
+
+
     public static function displayFooter()
     {
         parent::displayFooter();

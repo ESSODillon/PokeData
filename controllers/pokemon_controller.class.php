@@ -96,9 +96,6 @@ class PokemonController
         echo json_encode($names);
     }
 
-
-
-
     //handle an error
     public function error($message)
     {
@@ -108,4 +105,15 @@ class PokemonController
         //display the error page
         $error->display($message);
     }
+}
+
+//auto suggest movies
+if (filter_has_var(INPUT_GET, "q")) { //process ajax request
+    $query_terms = filter_input(INPUT_GET, 'q', FILTER_SANITIZE_STRING);
+
+    $names  = ($_GET['q']);
+
+    $controller = new PokemonController;
+
+    $controller->suggest($names);
 }

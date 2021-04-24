@@ -95,7 +95,8 @@ class PokemonModel
         return false;
     }
     //search the database for pokemon that match words in titles. Return an array of pokemon if succeed; false otherwise.
-    public function search_pokemon($terms) {
+    public function search_pokemon($terms)
+    {
         $terms = explode(" ", $terms); //explode multiple terms into an array
         //select statement for AND serach
         $sql = "SELECT * FROM " . $this->tblPokemon . " WHERE ";
