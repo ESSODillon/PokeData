@@ -101,10 +101,13 @@ class PokemonModel
         $sql = "SELECT * FROM " . $this->tblPokemon . " WHERE ";
 
         foreach ($terms as $term) {
-            $sql .= " AND Name LIKE '%" . $term . "%'";
+            $sql .= " Name LIKE '%" . $term . "%' AND";
         }
 
-        $sql .= ")";
+        //$sql .= ")";
+
+        $sql = rtrim($sql, "AND");
+        //echo $sql;
 
         //execute the query
         $query = $this->dbConnection->query($sql);
@@ -122,8 +125,8 @@ class PokemonModel
 
 
         while ($obj = $query->fetch_object()) {
-            $Pokemon = new Pokemon($obj->Name, $obj->Type_1, $obj->Type_2, $obj->Image, $obj->HP, $obj->Attack, $obj->Defense, $obj->Ability_1, $obj->Ability_2, $obj->Hidden_Ability, $obj->Mass, $obj->Color, $obj->Gender, $obj->Evolve, $obj->Description);
-
+            //$Pokemon = new Pokemon($obj->Name, $obj->Type_1, $obj->Type_2, $obj->Image, $obj->HP, $obj->Attack, $obj->Defense, $obj->Ability_1, $obj->Ability_2, $obj->Hidden_Ability, $obj->Mass, $obj->Color, $obj->Gender, $obj->Evolve, $obj->Description);
+            $Pokemon = new Pokemon($obj->Name, $obj->HP, $obj->Attack, $obj->Defense, $obj->Type_I, $obj->Type_II, $obj->Ability_I, $obj->Ability_II, $obj->Hidden_Ability, $obj->Mass, $obj->Color, $obj->Gender, $obj->Evolve, $obj->Description, $obj->Image);
             //set the id for the pokemon
             $Pokemon->setId($obj->ID);
 
