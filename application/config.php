@@ -18,6 +18,6 @@ date_default_timezone_set('America/New_York');
 
 // Uncomment links below respectively to get content to display
 // Dillon's link
-define("BASE_URL", "http://localhost:8080/I211_PHP/PokeData");
+//define("BASE_URL", "http://localhost:8080/I211_PHP/PokeData");
 // Kam's link
-// define("BASE_URL", "http://localhost/I211/PokeData");
+ define("BASE_URL", "http://localhost/I211/PokeData");

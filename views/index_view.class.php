@@ -34,6 +34,7 @@ class IndexView
                     </a>
                     <div id="right">
                         <img id="logo_banner" src="<?= BASE_URL ?>/www/img/charizard.png" />
+                        <a href="<?= BASE_URL ?>/index.php/user/registerForm">REGISTER / LOGIN </a><span> | </span>
                     </div>
                 </div>
 

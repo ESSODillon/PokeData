@@ -113,6 +113,17 @@ class PokemonModel
         //execute the query
         $query = $this->dbConnection->query($sql);
 
+        //error from multiple terms from the user
+        try{
+            if(!$query){
+                throw new SearchException();
+            }
+        }catch (SearchException $e){
+            $view = new SearchError();
+            $view->display();
+            die();
+        }
+
         // the search failed, return false.
         if (!$query)
             return false;

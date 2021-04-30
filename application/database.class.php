@@ -18,6 +18,7 @@ class Database
         'password' => 'phpuser',
         'database' => 'pokedata',
         'tblPokemon' => 'pokedata_db',
+        'tblUsers' => 'users_db'
     );
     //define the database connection object
     private $objDBConnection = NULL;
@@ -57,5 +58,10 @@ class Database
     public function getPokemonTable()
     {
         return $this->param['tblPokemon'];
+    }
+
+    //returns the name of the users table
+    public function getUserTable(){
+        return $this->param['tblUsers'];
     }
 }
