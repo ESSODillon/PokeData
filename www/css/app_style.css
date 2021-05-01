@@ -441,6 +441,17 @@ textarea:required:invalid {
   color: #084152;
   font-family: Gameboy;
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#login {
+
+  font-size: 12px;
+  text-decoration: none;
+  color: #084152;
+  font-family: Gameboy;
+  margin-top: 10px;
+
 }
 
 #detail-title {

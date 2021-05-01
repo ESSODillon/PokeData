@@ -29,12 +29,13 @@ class IndexView
                     <a href="<?= BASE_URL ?>/index.php" style="text-decoration: none" title="PokeData">
                         <div id="left">
                             <h1 id="title"'>PokeData</h1>
+                            <a href="<?= BASE_URL ?>/index.php/user/registerForm" style="text-decoration: none;">SIGN UP | LOGIN </a>
                             <div id="subtitle">Gotta catch ' em all!</div>
+
                         </div>
                     </a>
                     <div id="right">
                         <img id="logo_banner" src="<?= BASE_URL ?>/www/img/charizard.png" />
-                        <a href="<?= BASE_URL ?>/index.php/user/registerForm">REGISTER / LOGIN </a><span> | </span>
                     </div>
                 </div>
 
