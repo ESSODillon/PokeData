@@ -19,6 +19,9 @@ class PokemonIndex extends PokemonIndexView
 ?>
 
         <div id="list-header">Generation 1 Pokemon</div>
+        <br>
+        <br>
+        <a class="create_link" href="<?= BASE_URL ?>/pokemon/create">Create New Pokemon</a>
         <div class="grid-container">
             <?php
             if ($Collection === 0) {

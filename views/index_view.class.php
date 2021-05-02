@@ -30,6 +30,7 @@ class IndexView
                         <div id="left">
                             <h1 id="title"'>PokeData</h1>
                             <a href="<?= BASE_URL ?>/index.php/user/registerForm" style="text-decoration: none;">SIGN UP | LOGIN </a>
+                            <br>
                             <div id="subtitle">Gotta catch ' em all!</div>
 
                         </div>
@@ -45,7 +46,10 @@ class IndexView
         {
             ?>
                 <script type="text/javascript" src="<?= BASE_URL ?>/www/js/ajax_autosuggestion.js"></script>
+            </div>
+
         </body>
+        <footer id="footer"></footer>
 
         </html>
 <?php

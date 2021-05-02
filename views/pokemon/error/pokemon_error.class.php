@@ -21,7 +21,7 @@ class PokemonError extends PokemonIndexView
         <table style="width: 100%; border: none">
             <tr>
                 <td style="vertical-align: middle; text-align: center; width:100px">
-                    <img src='<?= BASE_URL ?>/www/img/error.jpg' style="width: 80px; border: none" />
+                    <img src='https://usernamehw.gallerycdn.vsassets.io/extensions/usernamehw/errorlens/3.2.6/1618696879515/Microsoft.VisualStudio.Services.Icons.Default' style="width: 80px; border: none" />
                 </td>
                 <td style="text-align: left; vertical-align: top;">
                     <h3> Sorry, but an error has occurred.</h3>

@@ -70,14 +70,22 @@ hr {
   margin: 0 auto -4em;
   text-align: left;
   width: 960px;
+  margin-bottom: 50px;
 }
 
 /*styles for the page footer */
 #footer {
+  position: absolute;
+  bottom: -50;
+  left: 0;
+  z-index: -10;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   font-size: 80%;
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #faaa6d;
 }
 
 #footer,
@@ -118,6 +126,41 @@ hr {
   font-family: Gameboy;
   color: #207394;
   display: inline-block;
+}
+
+/*styles for the page header that appears right below the banner*/
+#create-header {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  font-size: 15px;
+  font-family: Gameboy;
+  border-bottom: #207394 2px solid;
+  color: #207394;
+  display: inline-block;
+}
+
+.newpokemon {
+  margin-bottom: 15px;
+}
+
+.newpokemon td {
+  font-family: Gameboy;
+  color: black;
+  font-size: 15px;
+}
+
+.newpokemon input {
+  margin-bottom: 10px;
+  width: 250px;
+  height: 20px;
+  outline: none;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+}
+
+#description_input {
+  height: 60px;
 }
 /*styles for the record numbers that appear to the right of the page header*/
 span.rcd-numbers {
@@ -308,6 +351,10 @@ table#detail {
   margin-top: 0px;
 }
 
+#submit {
+  margin-bottom: 20px;
+}
+
 .pagination select {
   color: #666;
 }
@@ -445,13 +492,11 @@ textarea:required:invalid {
 }
 
 #login {
-
   font-size: 12px;
   text-decoration: none;
   color: #084152;
   font-family: Gameboy;
   margin-top: 10px;
-
 }
 
 #detail-title {
@@ -470,5 +515,28 @@ textarea:required:invalid {
   font-family: Gameboy;
   color: #084152;
   border-bottom: 2px #084152 solid;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.create_form {
+  margin-bottom: 20px;
+  background-color: #c7f2fd;
+}
+
+.create_button {
+  font-family: Gameboy;
+  height: 40px;
+  color: white;
+  background-color: #084152;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.create_link {
+  font-family: Gameboy;
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px black solid;
+  margin-left: 30px;
 }

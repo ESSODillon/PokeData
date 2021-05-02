@@ -94,6 +94,32 @@ class PokemonModel
 
         return false;
     }
+
+    public function create_pokemon()
+    {
+        $name = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'name', FILTER_SANITIZE_STRING)));
+        $hp = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'hp', FILTER_SANITIZE_STRING)));
+        $attack = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'attack', FILTER_SANITIZE_STRING)));
+        $defense = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'defense', FILTER_SANITIZE_STRING)));
+        $type_1 = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'type_1', FILTER_SANITIZE_STRING)));
+        $type_2 = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'type_2', FILTER_SANITIZE_STRING)));
+        $ability_1 = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'ability_1', FILTER_SANITIZE_STRING)));
+        $ability_2 = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'ability_2', FILTER_SANITIZE_STRING)));
+        $hidden_ability = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'hidden_ability', FILTER_SANITIZE_STRING)));
+        $mass = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'mass', FILTER_SANITIZE_STRING)));
+        $color = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'color', FILTER_SANITIZE_STRING)));
+        $gender = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'gender', FILTER_SANITIZE_STRING)));
+        $evolve = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'evolve', FILTER_SANITIZE_STRING)));
+        $description = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'description', FILTER_SANITIZE_STRING)));
+        $image = $this->objDBConnection->real_escape_string(trim(filter_input(INPUT_GET, 'image', FILTER_SANITIZE_STRING)));
+
+        $sql = "INSERT INTO " . $this->tblPokemon . " (name, hp, attack, defense, type_1, type_2, ability_1, ability_2, hidden_ability, mass, color, gender, evolve, description, image) VALUES ('$name', '$hp', '$attack', '$defense', '$type_1', '$type_2', '$ability_1', '$ability_2', '$hidden_ability', '$mass', '$color', '$gender', '$evolve','$description','$image',)";
+
+        $query = $this->dbConnection->query($sql);
+
+        if (!$query)
+            return false;
+    }
     //search the database for pokemon that match words in titles. Return an array of pokemon if succeed; false otherwise.
     public function search_pokemon($terms)
     {
@@ -114,11 +140,11 @@ class PokemonModel
         $query = $this->dbConnection->query($sql);
 
         //error from multiple terms from the user
-        try{
-            if(!$query){
+        try {
+            if (!$query) {
                 throw new SearchException();
             }
-        }catch (SearchException $e){
+        } catch (SearchException $e) {
             $view = new SearchError();
             $view->display();
             die();

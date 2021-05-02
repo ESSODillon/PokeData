@@ -105,6 +105,36 @@ class PokemonController
         //display the error page
         $error->display($message);
     }
+
+    public function create()
+    {
+        $create = new PokemonCreate();
+        $create->display();
+    }
+
+    public function insert()
+    {
+        $pokemon = $this->pokemon_model->create_pokemon();
+
+        if (!$pokemon) {
+            $pokemon = "There was a problem creating the pokemon";
+            $this->error($pokemon);
+            return;
+        }
+
+        $create = new CreateMessage();
+        $create->display();
+    }
+}
+
+if (filter_has_var(INPUT_GET, "create")) {
+    $query_terms = filter_input(INPUT_GET, 'create', FILTER_SANITIZE_STRING);
+
+    $form  = ($_GET['create']);
+
+    $controller = new PokemonController;
+
+    $controller->insert($form);
 }
 
 //auto suggest movies
